@@ -5,7 +5,7 @@
 **Descripción:**  
 Al ingresar desde Safari a la página [qastaging.siigo.com](https://qastaging.siigo.com) y navegar al apartado "Crear Clientes", se muestra una pantalla en blanco en lugar del formulario esperado.
 
-![Pantalla en blanco safari](https://drive.google.com/uc?id=1mh-NG_Xtrmla7URPIY4PVG9w5tyqYtjJ)
+![Pantalla en blanco safari](https://drive.google.com/uc?id=1z6K6II6BgWsYPymrTHuVKYJOhpZ7Jpd0)
 
 **Pasos para reproducirlo:**
 1. Acceder al sitio web [qastaging.siigo.com](https://qastaging.siigo.com) desde Safari.
