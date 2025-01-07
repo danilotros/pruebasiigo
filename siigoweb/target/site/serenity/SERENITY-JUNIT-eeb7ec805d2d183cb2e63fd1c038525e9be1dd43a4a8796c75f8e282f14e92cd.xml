@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="test flows for client creation" skipped="0" tests="1" time="0.05" timestamp="2025-01-06 08:22:11"><testcase name="User logs in and accesses &quot;Clients&quot; form"><error type="java.lang.NullPointerException"/><system-err>null
+com.google.common.base.Preconditions.checkNotNull(Preconditions.java:903)
+stepdefinitions.CreateClientsStepdefinition.theUserIsOnTheLoginPage(CreateClientsStepdefinition.java:23)
+✽.the user is on the login page(file:///Users/danielgarciaperea/IdeaProjects/siigoweb/src/test/resources/features/createclients.feature:4)
+</system-err></testcase></testsuite>
