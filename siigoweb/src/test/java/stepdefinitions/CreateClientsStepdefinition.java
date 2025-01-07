@@ -7,8 +7,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import questions.ValidateService;
 import questions.ValidateText;
 import questions.ValidateValueText;
+import tasks.Empty;
 import tasks.Login;
 import tasks.OpenPage;
 import tasks.Show;
@@ -54,29 +56,31 @@ public class CreateClientsStepdefinition {
 
 
 
-    @When("the user enters a name {string}")
-    public void theUserEntersAName(String arg0) {
+    @When("^the user enters a name (.*)$")
+    public void theUserEntersAName(String name) {
+        theActorInTheSpotlight().attemptsTo(
+                Empty.inputName(name)
+        );
     }
 
-    @Then("the name is accepted")
-    public void theNameIsAccepted() {
-    }
 
-    @When("the user leaves the name field empty")
-    public void theUserLeavesTheNameFieldEmpty() {
-    }
 
-    @Then("an error {string} is shown")
-    public void anErrorIsShown(String arg0) {
+    @Then("^an error (.*) is shown$")
+    public void anErrorIsShown(String error) {
+        theActorInTheSpotlight().should(seeThat(ValidateValueText.errorLabel(error)));
     }
 
 
     @Then("the Create Client form loads")
     public void theCreateClientFormLoads() {
+        theActorInTheSpotlight().should(seeThat(ValidateService.loadPage()));
         
     }
 
-    @And("the form contains {string}, {string}, {string}")
-    public void theFormContains(String arg0, String arg1, String arg2) {
+    @And("^the form contains (.*), (.*), (.*)$")
+    public void theFormContains(String name, String lastname, String identification) {
+        theActorInTheSpotlight().should(seeThat(ValidateValueText.nameLabel(name)));
+        theActorInTheSpotlight().should(seeThat(ValidateValueText.lastNameLabel(lastname)));
+        theActorInTheSpotlight().should(seeThat(ValidateValueText.identificationLabel(identification)));
     }
 }

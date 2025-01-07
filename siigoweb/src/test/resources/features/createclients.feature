@@ -14,9 +14,7 @@ Feature: test flows for client creation
   Scenario: Validate name field is not empty
     Given the Crear un tercero form is displayed
     When the user enters a name "Juan"
-    Then the name is accepted
-    When the user leaves the name field empty
-    Then an error "Name is required" is shown
+    Then an error Campo obligatorio is shown
 
 ### Integration Test
   Scenario: Login and verify "Create Client" form loads
@@ -28,4 +26,4 @@ Feature: test flows for client creation
 ### Acceptance Test
   Scenario: User accesses the "Create Client" form after login
     Then the Crear un tercero form is displayed
-    And the form contains "Name", "LastName", "Identification"
+    And the form contains Nombres, Apellidos, Identificación
